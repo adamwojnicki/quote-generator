@@ -1,9 +1,108 @@
+/* IMPORTS AND VARIABLES */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap");
+
 :root {
   font-size: 10px;
+  --black: #000000;
+  --grey-dark: #333333;
+  --grey1: #4f4f4f;
+  --grey2: #828282;
+  --yelow: #f7df94;
+  --sans-serif: "Raleway", Arial, Helvetica, sans-serif;
 }
 
+/* IMPORTS AND VARIABLES END */
+
+/* COMMON */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
+
+body,
+button {
+  font-family: var(--sans-serif);
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: auto;
+}
+
+/* COMMON END */
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2.4rem 0;
+}
+
+header button {
+  font-size: 1.8rem;
+  color: var(--grey1);
+}
+
+/* HEADER END */
+
+/* MAIN */
+main {
+  width: 90%;
+  max-width: 720px;
+  margin: auto;
+}
+
+main blockquote {
+  font-size: 3.6rem;
+  margin: 8rem 0 8rem 9.9rem;
+  position: relative;
+}
+
+main blockquote:before {
+  content: "";
+  position: absolute;
+  left: -9.9rem;
+  width: 0.8rem;
+  height: 100%;
+  background: var(--yelow);
+}
+
+main button {
+  text-align: left;
+  margin: auto;
+  padding: 5rem 2.9rem;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+main button:hover {
+  background: var(--grey-dark);
+}
+
+main button:hover .author {
+  color: #f2f2f2;
+}
+
+main button .author {
+  color: var(--grey1);
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  transition: all 0.4s ease-in-out;
+}
+
+main button .category {
+  color: var(--grey2);
+  font-size: 1.4rem;
+}
+
+/* MAIN END */

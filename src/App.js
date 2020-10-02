@@ -16,8 +16,8 @@ export default class App extends Component {
             operation will magnify the inefficiency.”
           </blockquote>
           <button>
-            <p>Bill Gates</p>
-            <p>Business</p>
+            <p className="author">Bill Gates</p>
+            <p className="category">Business</p>
           </button>
         </main>
       </div>
