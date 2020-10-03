@@ -1,17 +1,12 @@
 import React from "react";
 
-export default function SingleQuote([
-  quoteAuthor,
-  quoteGenre,
-  quoteText,
-  getQuotesList,
-]) {
+export default function SingleQuote({ text, genre, author, getQuotesList }) {
   return (
     <>
-      <blockquote>{quoteText}</blockquote>;
-      <button onClick={() => getQuotesList}>
-        <p className="author">{quoteAuthor}</p>
-        <p className="category">{quoteGenre}</p>
+      <blockquote>{text}</blockquote>;
+      <button onClick={getQuotesList}>
+        <p className="author">{author}</p>
+        <p className="category">{genre}</p>
       </button>
     </>
   );

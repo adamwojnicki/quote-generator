@@ -105,4 +105,9 @@ main button .category {
   font-size: 1.4rem;
 }
 
+main .quote-author {
+  color: var(--grey-dark);
+  font-size: 3.6rem;
+}
+
 /* MAIN END */
