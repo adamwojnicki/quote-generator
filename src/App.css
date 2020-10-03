@@ -45,15 +45,20 @@ header {
   display: flex;
   justify-content: flex-end;
   padding: 2.4rem 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 header button {
   font-size: 1.8rem;
   color: var(--grey1);
+  display: flex;
+  align-items: center;
 }
 
 /* HEADER END */
-
 /* MAIN */
 main {
   width: 90%;

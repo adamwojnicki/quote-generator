@@ -21,10 +21,9 @@ export default class App extends Component {
 
   async getQuotesByAuthor() {
     const res = await axios.get(
-      `https://quote-garden.herokuapp.com/api/v2/authors/${this.state.singleQuote.quoteAuthor}?page=1&limit=10`
+      `https://quote-garden.herokuapp.com/api/v2/authors/${this.state.singleQuote.quoteAuthor}?page=1`
     );
     this.setState({ quotes: res.data.quotes });
-    console.log(this.state.quotes);
   }
 
   componentDidMount() {
@@ -32,13 +31,12 @@ export default class App extends Component {
   }
 
   render() {
-    if (!this.state.singleQuote || !this.state.quotes.length === 0) {
-      return <p>Loading...</p>;
-    }
     return (
       <div className="container">
         <header>
-          <button onClick={() => this.getRandomQuote()}>random</button>
+          <button onClick={() => this.getRandomQuote()}>
+            Random <span class="material-icons">loop</span>
+          </button>
         </header>
         <main>
           {this.state.quotes.length > 0 ? (
