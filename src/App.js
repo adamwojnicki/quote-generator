@@ -4,6 +4,7 @@ import "./App.css";
 import SingleQuote from "./components/SingleQuote";
 import QuoteList from "./components/QuoteList";
 import ErrorMeassage from "./components/ErrorMessage";
+import Header from "./components/Header";
 
 import { quoteGarden } from "./apis/quoteGarden";
 
@@ -17,7 +18,7 @@ export default class App extends Component {
   async getRandomQuote() {
     this.setState({ quotes: [], singleQuote: {} });
     try {
-      const res = await quoteGarden.get("quot/random");
+      const res = await quoteGarden.get("quotes/random");
       this.setState({ singleQuote: res.data.quote });
     } catch (error) {
       this.setState({ errors: error });
@@ -45,11 +46,7 @@ export default class App extends Component {
     }
     return (
       <div className="container">
-        <header>
-          <button onClick={() => this.getRandomQuote()}>
-            Random <span className="material-icons">loop</span>
-          </button>
-        </header>
+        <Header onRandomClick={() => this.getRandomQuote()} />
         <main>
           {this.state.quotes.length > 0 ? (
             <QuoteList
