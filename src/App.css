@@ -21,6 +21,11 @@
   box-sizing: border-box;
 }
 
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
 body,
 button {
   font-family: var(--sans-serif);
@@ -66,6 +71,7 @@ main {
   width: 90%;
   max-width: 720px;
   margin: auto;
+  padding-bottom: 4.8rem;
 }
 
 main blockquote {
@@ -129,6 +135,21 @@ main .quote-author {
   font-size: 3.6rem;
 }
 /* ERROR SCREEN END */
+
+/* FOOTER */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  height: 4.8rem;
+  text-align: center;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey2);
+}
+/* FOOTER END */
 
 /* MOBILE LAYOUT */
 @media (max-width: 620px) {

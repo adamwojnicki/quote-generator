@@ -62,6 +62,7 @@ export default class App extends Component {
             />
           )}
         </main>
+        <footer>Adam Wojnicki @ DevChallenges.io</footer>
       </div>
     );
   }
