@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./App.css";
 
 import SingleQuote from "./components/SingleQuote";
 import QuoteList from "./components/QuoteList";
+
+import { quoteGarden } from "./apis/quoteGarden";
 
 export default class App extends Component {
   state = {
@@ -14,9 +15,7 @@ export default class App extends Component {
   async getRandomQuote() {
     this.setState({ quotes: [], singleQuote: {} });
     try {
-      const res = await axios.get(
-        "https://quote-garden.herokuapp.com/api/v2/quotes/random"
-      );
+      const res = await quoteGarden.get("quotes/random");
       this.setState({ singleQuote: res.data.quote });
     } catch {
       console.log("An error occurred...");
@@ -25,8 +24,8 @@ export default class App extends Component {
 
   async getQuotesByAuthor() {
     try {
-      const res = await axios.get(
-        `https://quote-garden.herokuapp.com/api/v2/authors/${this.state.singleQuote.quoteAuthor}?page=1`
+      const res = await quoteGarden.get(
+        `authors/${this.state.singleQuote.quoteAuthor}?page=1`
       );
       this.setState({ quotes: res.data.quotes });
     } catch {
@@ -43,7 +42,7 @@ export default class App extends Component {
       <div className="container">
         <header>
           <button onClick={() => this.getRandomQuote()}>
-            Random <span class="material-icons">loop</span>
+            Random <span className="material-icons">loop</span>
           </button>
         </header>
         <main>
