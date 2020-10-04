@@ -49,6 +49,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  background: #fff;
+  z-index: 10;
 }
 
 header button {
@@ -127,3 +129,16 @@ main .quote-author {
   font-size: 3.6rem;
 }
 /* ERROR SCREEN END */
+
+/* MOBILE LAYOUT */
+@media (max-width: 620px) {
+  :root {
+    font-size: 8px;
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    font-size: 6px;
+  }
+}
+/* MOBILE LAYOUT END */
