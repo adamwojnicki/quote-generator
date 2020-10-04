@@ -116,3 +116,14 @@ main .quote-author {
 }
 
 /* MAIN END */
+
+/* ERROR SCREEN */
+.error-msg {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.6rem;
+}
+/* ERROR SCREEN END */

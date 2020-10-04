@@ -3,6 +3,7 @@ import "./App.css";
 
 import SingleQuote from "./components/SingleQuote";
 import QuoteList from "./components/QuoteList";
+import ErrorMeassage from "./components/ErrorMessage";
 
 import { quoteGarden } from "./apis/quoteGarden";
 
@@ -10,15 +11,16 @@ export default class App extends Component {
   state = {
     singleQuote: {},
     quotes: [],
+    errors: null,
   };
 
   async getRandomQuote() {
     this.setState({ quotes: [], singleQuote: {} });
     try {
-      const res = await quoteGarden.get("quotes/random");
+      const res = await quoteGarden.get("quot/random");
       this.setState({ singleQuote: res.data.quote });
-    } catch {
-      console.log("An error occurred...");
+    } catch (error) {
+      this.setState({ errors: error });
     }
   }
 
@@ -28,8 +30,8 @@ export default class App extends Component {
         `authors/${this.state.singleQuote.quoteAuthor}?page=1`
       );
       this.setState({ quotes: res.data.quotes });
-    } catch {
-      console.log("An error occurred...");
+    } catch (error) {
+      this.setState({ errors: error });
     }
   }
 
@@ -38,6 +40,9 @@ export default class App extends Component {
   }
 
   render() {
+    if (this.state.errors) {
+      return <ErrorMeassage />;
+    }
     return (
       <div className="container">
         <header>
