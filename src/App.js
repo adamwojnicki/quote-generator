@@ -13,17 +13,25 @@ export default class App extends Component {
 
   async getRandomQuote() {
     this.setState({ quotes: [], singleQuote: {} });
-    const res = await axios.get(
-      "https://quote-garden.herokuapp.com/api/v2/quotes/random"
-    );
-    this.setState({ singleQuote: res.data.quote });
+    try {
+      const res = await axios.get(
+        "https://quote-garden.herokuapp.com/api/v2/quotes/random"
+      );
+      this.setState({ singleQuote: res.data.quote });
+    } catch {
+      console.log("An error occurred...");
+    }
   }
 
   async getQuotesByAuthor() {
-    const res = await axios.get(
-      `https://quote-garden.herokuapp.com/api/v2/authors/${this.state.singleQuote.quoteAuthor}?page=1`
-    );
-    this.setState({ quotes: res.data.quotes });
+    try {
+      const res = await axios.get(
+        `https://quote-garden.herokuapp.com/api/v2/authors/${this.state.singleQuote.quoteAuthor}?page=1`
+      );
+      this.setState({ quotes: res.data.quotes });
+    } catch {
+      console.log("An error occurred...");
+    }
   }
 
   componentDidMount() {
