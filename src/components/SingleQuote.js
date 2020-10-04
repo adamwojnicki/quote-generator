@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SingleQuote({ text, genre, author, getQuotesList }) {
+export default ({ text, genre, author, getQuotesList }) => {
   return (
     <>
       <blockquote>{text}</blockquote>;
@@ -10,4 +10,4 @@ export default function SingleQuote({ text, genre, author, getQuotesList }) {
       </button>
     </>
   );
-}
+};

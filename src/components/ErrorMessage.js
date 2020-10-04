@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function ErrorMessage() {
+export default () => {
   return <div className="error-msg">An error occurred :(</div>;
-}
+};

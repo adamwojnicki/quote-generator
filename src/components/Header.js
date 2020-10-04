@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header({ onRandomClick }) {
+export default ({ onRandomClick }) => {
   return (
     <header>
       <button onClick={onRandomClick}>
@@ -8,4 +8,4 @@ export default function Header({ onRandomClick }) {
       </button>
     </header>
   );
-}
+};
